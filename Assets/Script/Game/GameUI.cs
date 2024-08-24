@@ -65,31 +65,36 @@ namespace Game
 
         private void SwitchToBottom()
         {
-            SetGameObjectActive(buttonLeft ,   true);
-            SetGameObjectActive(buttonRight ,  true);
-            SetGameObjectActive(buttonTop ,    true);
-            SetGameObjectActive(buttonBottom , false);
+            if (currentRoom.BottomRoom == null) return;
+            currentRoom.ResetPosition();
+            currentRoom = currentRoom.BottomRoom;
+            currentRoom.SetPositionCenter();
+            RefreshButtons();
         }
 
         private void SwitchToLeft()
         {
             if (currentRoom.LeftRoom == null) return;
-            RefreshButtons();
-            currentRoom.gameObject.SetActive(false);
+            currentRoom.ResetPosition();
             currentRoom = currentRoom.LeftRoom;
+            RefreshButtons();
             currentRoom.SetPositionCenter();
         }
 
         private void SwitchToRight()
         {
             if (currentRoom.RightRoom == null) return;
+            currentRoom.ResetPosition();
             currentRoom = currentRoom.RightRoom;
-            currentRoom.LeftRoom.ResetPosition();
+            currentRoom.SetPositionCenter();
             RefreshButtons();
         }
 
         private void SwitchToTop()
         {
+            if (currentRoom.TopRoom == null) return;
+            currentRoom.TopRoom.SetPositionCenter();
+            currentRoom = currentRoom.TopRoom;
             RefreshButtons();
         }
 
