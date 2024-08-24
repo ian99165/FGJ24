@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 131599125}
   - component: {fileID: 131599124}
   m_Layer: 5
-  m_Name: cameo
+  m_Name: Cameo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,15 +286,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2e058ef4445aac841a338751b3c53406, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 961854679}
   - component: {fileID: 961854681}
   m_Layer: 5
-  m_Name: password
+  m_Name: Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 1509637031}
   - component: {fileID: 1509637033}
   m_Layer: 5
-  m_Name: exit
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   button_4: {fileID: 1714147358}
   Anubis_: {fileID: 1204343202}
   password_: {fileID: 961854681}
-  cameo_: {fileID: 131599124}
+  cameo_count: {fileID: 131599124}
   Count_Exit: {fileID: 1509637033}
   CountUI: {fileID: 1697301811}
   CountPasswordUI: {fileID: 479619216}

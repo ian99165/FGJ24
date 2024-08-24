@@ -12,7 +12,7 @@ public class Count : MonoBehaviour
     [SerializeField] private Button button_4;
     [SerializeField] private Button Anubis_;
     [SerializeField] private Button password_;
-    [SerializeField] private Button cameo_;
+    [SerializeField] private Button cameo_count;
     [SerializeField] private Button Count_Exit;
 
     public GameObject CountUI;
@@ -27,7 +27,6 @@ public class Count : MonoBehaviour
 
     public RectTransform buttonRectTransform;
 
-    // Start is called before the first frame update
     void Start()
     {
         button_1.onClick.AddListener((() =>
@@ -80,7 +79,7 @@ public class Count : MonoBehaviour
         }));
         Anubis_.onClick.AddListener(ClickCountuiClick);
         password_.onClick.AddListener(ClickpasswordClick);
-        cameo_.onClick.AddListener(backhall);
+        cameo_count.onClick.AddListener(backhall_count);
         Count_Exit.onClick.AddListener(ClickCountuiUIExit);
     }
 
@@ -142,7 +141,7 @@ public class Count : MonoBehaviour
         buttonRectTransform.anchoredPosition = targetPosition;
     }
 
-    private void backhall()
+    private void backhall_count()
     {
         print("back!!!");
     }
