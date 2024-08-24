@@ -1519,6 +1519,18 @@ PrefabInstance:
       propertyPath: leftRoom
       value: 
       objectReference: {fileID: 6555842838229874157}
+    - target: {fileID: 6040812125127748207, guid: 735aea2e95012af48a012e55d2105f08, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6945024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040812125127748207, guid: 735aea2e95012af48a012e55d2105f08, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040812125127748207, guid: 735aea2e95012af48a012e55d2105f08, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8975389
+      objectReference: {fileID: 0}
     - target: {fileID: 6782038338570445187, guid: 735aea2e95012af48a012e55d2105f08, type: 3}
       propertyPath: m_Name
       value: Puzzle_Right
