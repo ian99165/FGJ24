@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.rstartools.bookmarkeverything": {
+      "version": "https://github.com/L1247/bookmark-everything.git?path=BookmarkEverything/Assets/BookmarkEverything",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f0b44fdb6d6caf6579d932eb3b1f5a106eaca936"
+    },
     "com.unity.2d.animation": {
       "version": "9.1.0",
       "depth": 1,
