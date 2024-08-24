@@ -20,6 +20,8 @@ namespace Game
 
     #region Private Variables
 
+        private Vector3 startPosition;
+
         [SerializeField]
         private Room leftRoom;
 
@@ -37,7 +39,21 @@ namespace Game
 
     #endregion
 
+    #region Unity events
+
+        private void Awake()
+        {
+            startPosition = rectTransform.localPosition;
+        }
+
+    #endregion
+
     #region Public Methods
+
+        public void ResetPosition()
+        {
+            rectTransform.localPosition = startPosition;
+        }
 
         public void SetPositionCenter()
         {

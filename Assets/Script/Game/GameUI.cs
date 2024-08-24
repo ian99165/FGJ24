@@ -50,6 +50,14 @@ namespace Game
 
     #region Private Methods
 
+        private void RefreshButtons()
+        {
+            SetGameObjectActive(buttonLeft ,   currentRoom.LeftRoom != null);
+            SetGameObjectActive(buttonRight ,  currentRoom.RightRoom != null);
+            SetGameObjectActive(buttonTop ,    currentRoom.TopRoom != null);
+            SetGameObjectActive(buttonBottom , currentRoom.BottomRoom != null);
+        }
+
         private void SetGameObjectActive(Component component , bool active)
         {
             component.gameObject.SetActive(active);
@@ -66,9 +74,7 @@ namespace Game
         private void SwitchToLeft()
         {
             if (currentRoom.LeftRoom == null) return;
-            SetGameObjectActive(buttonRight , true);
-            SetGameObjectActive(buttonLeft ,  false);
-            SetGameObjectActive(buttonTop ,   false);
+            RefreshButtons();
             currentRoom.gameObject.SetActive(false);
             currentRoom = currentRoom.LeftRoom;
             currentRoom.SetPositionCenter();
@@ -76,17 +82,15 @@ namespace Game
 
         private void SwitchToRight()
         {
-            SetGameObjectActive(buttonLeft ,  true);
-            SetGameObjectActive(buttonRight , false);
-            SetGameObjectActive(buttonTop ,   false);
+            if (currentRoom.RightRoom == null) return;
+            currentRoom = currentRoom.RightRoom;
+            currentRoom.LeftRoom.ResetPosition();
+            RefreshButtons();
         }
 
         private void SwitchToTop()
         {
-            SetGameObjectActive(buttonTop ,    false);
-            SetGameObjectActive(buttonLeft ,   false);
-            SetGameObjectActive(buttonRight ,  false);
-            SetGameObjectActive(buttonBottom , true);
+            RefreshButtons();
         }
 
     #endregion
