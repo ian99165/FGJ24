@@ -7,18 +7,18 @@ public class SpotTheDifferences : MonoBehaviour
 {
     [SerializeField] private Button flaw1;
     [SerializeField] private Button flaw2;
-    [SerializeField] private Button flaw3;
     [SerializeField] private Button cameo_S_T_D;
 
     private bool flaw1_;
     private bool flaw2_;
-    private bool flaw3_;
 
     public GameObject flaw1_img;
     public GameObject flaw2_img;
-    public GameObject flaw3_img;
-
-    public RectTransform buttonRectTransform;
+    
+    public GameObject parentObject;
+    
+    public float rotationAngle = 90f;
+    public float duration = 1f;
     
     void Start()
     {
@@ -38,14 +38,6 @@ public class SpotTheDifferences : MonoBehaviour
                 ClickFlaw();
             }
         }));
-        flaw3.onClick.AddListener((() =>
-        {
-            if (!flaw3_)
-            {
-                ClickFlaw3();
-                ClickFlaw();
-            }
-        }));
         cameo_S_T_D.onClick.AddListener(backhall_S_T_D);
     }
 
@@ -61,43 +53,31 @@ public class SpotTheDifferences : MonoBehaviour
         flaw2_ = true;
     }
 
-    private void ClickFlaw3()
-    {
-        flaw3_img.SetActive(false);
-        flaw3_ = true;
-    }
-
     private void ClickFlaw()
     {
-        if (flaw1_ == true && flaw2_ == true && flaw3_ == true)
+        if (flaw1_ == true && flaw2_ == true)
         {
-            movecountUI();
+            StartCoroutine(SmoothRotation());
         }
     }
-
-    private void movecountUI()
+    
+    private IEnumerator SmoothRotation()
     {
-        StartCoroutine(SmoothMoveUI(new Vector2(0, 50), 1f));
-    }
-
-    private IEnumerator SmoothMoveUI(Vector2 moveAmount, float duration)
-    {
-        Vector2 startPosition = buttonRectTransform.anchoredPosition;
-        Vector2 targetPosition = startPosition + moveAmount;
         float elapsedTime = 0f;
-
         while (elapsedTime < duration)
         {
-            buttonRectTransform.anchoredPosition = Vector2.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            float step = rotationAngle * Time.deltaTime / duration;
+            parentObject.transform.Rotate(0, 0, step);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        buttonRectTransform.anchoredPosition = targetPosition;
     }
-    
+
     private void backhall_S_T_D()
     {
-        print("back!!!");
+        if (flaw1_ == true && flaw2_ == true)
+        {
+            print("back!!!");
+        }
     }
 }
