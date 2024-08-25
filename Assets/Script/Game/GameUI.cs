@@ -32,6 +32,21 @@ namespace Game
         [SerializeField]
         private Button buttonBottom;
 
+        [SerializeField]
+        private Image cameo_S_T_D;
+
+        [SerializeField]
+        private Image cameo_Count;
+
+        [SerializeField]
+        private Image cameo_Order;
+
+        [SerializeField]
+        private Image ghost_1;
+
+        [SerializeField]
+        private Image ghost_2;
+
     #endregion
 
     #region Unity events
@@ -44,6 +59,31 @@ namespace Game
             buttonBottom.onClick.AddListener(SwitchToBottom);
             buttonBottom.gameObject.SetActive(false);
             currentRoom = startRoom;
+        }
+
+    #endregion
+
+    #region Public Methods
+
+        public void ShowCameo_Count()
+        {
+            cameo_Count.gameObject.SetActive(true);
+        }
+
+        public void ShowCameo_S_T_D()
+        {
+            cameo_S_T_D.gameObject.SetActive(true);
+        }
+
+        public void ShowGhost()
+        {
+            ghost_1.gameObject.SetActive(false);
+            ghost_2.gameObject.SetActive(true);
+        }
+
+        public void ShowOrder()
+        {
+            cameo_Order.gameObject.SetActive(true);
         }
 
     #endregion
