@@ -129,6 +129,7 @@ public class Count : MonoBehaviour
     private void backhall_count()
     {
         _audioSource.PlayOneShot(_clear);
+        cameo_count.gameObject.SetActive(false);
         print("back!!!");
         var game = FindObjectOfType<Game.Game>();
         if (game != null) game.FinishCount();
