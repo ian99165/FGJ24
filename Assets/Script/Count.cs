@@ -27,8 +27,13 @@ public class Count : MonoBehaviour
 
     public RectTransform buttonRectTransform;
 
+    public AudioClip _clear;
+    public AudioClip _button;
+    AudioSource _audioSource;
+
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         button_1.onClick.AddListener((() =>
         {
             number1++;
@@ -40,6 +45,7 @@ public class Count : MonoBehaviour
             Debug.Log($"number1: {number1}");
             button_1.GetComponentInChildren<TMP_Text>().text = $"{number1}";
             CheckGameWin();
+            _audioSource.PlayOneShot(_button);
         }));
         button_2.onClick.AddListener((() =>
         {
@@ -52,6 +58,7 @@ public class Count : MonoBehaviour
             Debug.Log($"number2: {number2}");
             button_2.GetComponentInChildren<TMP_Text>().text = $"{number2}";
             CheckGameWin();
+            _audioSource.PlayOneShot(_button);
         }));
         button_3.onClick.AddListener((() =>
         {
@@ -64,6 +71,7 @@ public class Count : MonoBehaviour
             Debug.Log($"number3: {number3}");
             button_3.GetComponentInChildren<TMP_Text>().text = $"{number3}";
             CheckGameWin();
+            _audioSource.PlayOneShot(_button);
         }));
         button_4.onClick.AddListener((() =>
         {
@@ -76,6 +84,7 @@ public class Count : MonoBehaviour
             Debug.Log($"number4: {number4}");
             button_4.GetComponentInChildren<TMP_Text>().text = $"{number4}";
             CheckGameWin();
+            _audioSource.PlayOneShot(_button);
         }));
         Anubis_.onClick.AddListener(ClickCountuiClick);
         password_.onClick.AddListener(ClickpasswordClick);
@@ -143,6 +152,7 @@ public class Count : MonoBehaviour
 
     private void backhall_count()
     {
+        _audioSource.PlayOneShot(_clear);
         print("back!!!");
     }
 }
